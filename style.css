@@ -1,0 +1,120 @@
+/* Full-screen dark hero */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+/* Hero wrapper */
+.hero {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Circle container */
+.container {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+}
+
+/* Glowing center core */
+.core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px #fff, 0 0 40px #0ff, 0 0 60px #0ff;
+}
+
+/* Pulsing rings */
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid hsl(calc(var(--i) * 18), 100%, 50%);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  animation: pulse 2s linear infinite;
+  animation-delay: calc(var(--i) * 0.1s);
+}
+
+/* Animation for circles */
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+/* Hero text */
+.hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin: 0;
+  animation: fadeInDown 1s ease-out;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+#music-toggle {
+    position:fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #111;
+    color: #0ff;
+    border: 2px solid #0ff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow:  0 0 10px #0ff;
+
+
+
+
+
+}
